@@ -51,10 +51,16 @@ static void connected(struct bt_conn *conn, uint8_t err)
         .pref_tx_phy = BT_GAP_LE_PHY_2M,
         .pref_rx_phy = BT_GAP_LE_PHY_2M,
     };
-    bt_conn_le_phy_update(conn, &phy_param);
+    int ret = bt_conn_le_phy_update(conn, &phy_param);
+    if (ret && ret != -EALREADY) {
+        LOG_WRN("PHY update request failed: %d", ret);
+    }
 
     /* Request MTU 247 */
-    bt_gatt_exchange_mtu(conn, &mtu_params);
+    ret = bt_gatt_exchange_mtu(conn, &mtu_params);
+    if (ret) {
+        LOG_ERR("MTU exchange request failed: %d", ret);
+    }
 }
 
 static void disconnected(struct bt_conn *conn, uint8_t reason)
@@ -89,9 +95,8 @@ int ble_init(void)
 void ble_start_advertising(void)
 {
     int err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), NULL, 0);
-    if (err) {
+    if (err && err != -EALREADY) {
         LOG_ERR("Advertising start failed: %d", err);
-        return;
     }
     LOG_INF("Advertising started as \"%s\"", CONFIG_BT_DEVICE_NAME);
 }
