@@ -97,8 +97,9 @@ void ble_start_advertising(void)
     int err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), NULL, 0);
     if (err && err != -EALREADY) {
         LOG_ERR("Advertising start failed: %d", err);
+    } else {
+        LOG_INF("Advertising started as \"%s\"", CONFIG_BT_DEVICE_NAME);
     }
-    LOG_INF("Advertising started as \"%s\"", CONFIG_BT_DEVICE_NAME);
 }
 
 bool ble_is_connected(void)

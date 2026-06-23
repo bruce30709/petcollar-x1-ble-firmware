@@ -97,6 +97,7 @@ static ssize_t cmd_write_cb(struct bt_conn *conn,
 		LOG_INF("CMD_FIND_MODE_OFF (stub)");
 		break;
 	case CMD_SYNC_TIME:
+		/* TODO: param2 is uint16_t (max 65535s ~18h) — real sync needs uint32 timestamp */
 		LOG_INF("CMD_SYNC_TIME ts=%u (stub)", cmd->param2);
 		break;
 	case CMD_SET_CONFIG:
