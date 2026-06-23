@@ -92,12 +92,14 @@ int main(void)
     int err = ble_init();
     if (err) {
         LOG_ERR("ble_init failed: %d", err);
+        /* Zephyr ignores main() return value — device requires reset to recover */
         return err;
     }
 
     err = ble_pcs_init();
     if (err) {
         LOG_ERR("ble_pcs_init failed: %d", err);
+        /* Zephyr ignores main() return value — device requires reset to recover */
         return err;
     }
 
