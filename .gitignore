@@ -1,0 +1,7 @@
+build/
+twister-out/
+*.pyc
+*.elf
+*.hex
+*.bin
+*.map
