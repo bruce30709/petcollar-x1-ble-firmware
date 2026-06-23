@@ -82,11 +82,19 @@ struct ble_command_t {
     uint16_t param2;
 } __packed;
 
+/* Device state enum — for ble_status_t.state */
+enum device_state {
+    STATE_IDLE        = 0,
+    STATE_ADVERTISING = 1,
+    STATE_CONNECTED   = 2,
+    STATE_LOCATING    = 3,
+};
+
 /* 6 bytes — Device Status characteristic payload */
 struct ble_status_t {
     uint8_t  state;
     uint8_t  battery_pct;
-    uint8_t  rssi;
+    int8_t   rssi;          /* dBm, typical range -100 to 0 */
     uint8_t  uptime[3];     /* seconds, little-endian 24-bit */
 } __packed;
 
