@@ -1,15 +1,21 @@
+#include <string.h>
 #include <zephyr/bluetooth/bluetooth.h>
+#include <zephyr/bluetooth/conn.h>
 #include <zephyr/bluetooth/gatt.h>
+#include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 #include "ble_pet_collar_service.h"
 
 LOG_MODULE_REGISTER(pcs, LOG_LEVEL_INF);
 
 /* CCCD tracking — one flag per notifiable characteristic */
-static bool notify_location_enabled;
-static bool notify_health_enabled;
-static bool notify_behavior_enabled;
-static bool notify_status_enabled;
+static volatile bool notify_location_enabled;
+static volatile bool notify_health_enabled;
+static volatile bool notify_behavior_enabled;
+static volatile bool notify_status_enabled;
+
+/* Mutex protecting g_config for cross-thread access */
+K_MUTEX_DEFINE(g_config_mutex);
 
 /* RAM-backed configuration (persists for connection session) */
 static struct ble_config_t g_config = {
@@ -18,6 +24,24 @@ static struct ble_config_t g_config = {
 	.alert_hr_max      = 200,
 	.alert_temp_max    = 410,
 	.geofence_radius_m = 500,
+};
+
+/* ---- Connection callback — reset CCCD shadow flags on new connection ---- */
+
+static void pcs_conn_connected(struct bt_conn *conn, uint8_t err)
+{
+	if (err) {
+		return;
+	}
+	/* Reset shadow CCCD flags — client must re-subscribe each connection */
+	notify_location_enabled  = false;
+	notify_health_enabled    = false;
+	notify_behavior_enabled  = false;
+	notify_status_enabled    = false;
+}
+
+BT_CONN_CB_DEFINE(pcs_conn_callbacks) = {
+	.connected = pcs_conn_connected,
 };
 
 /* ---- CCCD write callbacks ---- */
@@ -53,6 +77,9 @@ static ssize_t cmd_write_cb(struct bt_conn *conn,
 			    const void *buf, uint16_t len,
 			    uint16_t offset, uint8_t flags)
 {
+	if (offset != 0) {
+		return BT_GATT_ERR(BT_ATT_ERR_INVALID_OFFSET);
+	}
 	if (len != sizeof(struct ble_command_t)) {
 		LOG_WRN("CMD: unexpected length %u", len);
 		return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
@@ -95,8 +122,11 @@ static ssize_t config_read_cb(struct bt_conn *conn,
 			      const struct bt_gatt_attr *attr,
 			      void *buf, uint16_t len, uint16_t offset)
 {
-	return bt_gatt_attr_read(conn, attr, buf, len, offset,
-				 &g_config, sizeof(g_config));
+	k_mutex_lock(&g_config_mutex, K_FOREVER);
+	ssize_t ret = bt_gatt_attr_read(conn, attr, buf, len, offset,
+					&g_config, sizeof(g_config));
+	k_mutex_unlock(&g_config_mutex);
+	return ret;
 }
 
 static ssize_t config_write_cb(struct bt_conn *conn,
@@ -107,7 +137,9 @@ static ssize_t config_write_cb(struct bt_conn *conn,
 	if (offset + len > sizeof(g_config)) {
 		return BT_GATT_ERR(BT_ATT_ERR_INVALID_OFFSET);
 	}
+	k_mutex_lock(&g_config_mutex, K_FOREVER);
 	memcpy((uint8_t *)&g_config + offset, buf, len);
+	k_mutex_unlock(&g_config_mutex);
 	LOG_INF("Config updated");
 	return len;
 }
