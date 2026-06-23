@@ -83,7 +83,7 @@ struct ble_command_t {
 } __packed;
 
 /* Device state enum — for ble_status_t.state */
-enum device_state {
+enum pcs_device_state {
     STATE_IDLE        = 0,
     STATE_ADVERTISING = 1,
     STATE_CONNECTED   = 2,
