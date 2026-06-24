@@ -4,13 +4,25 @@
 #include <zephyr/bluetooth/hci.h>
 #include <zephyr/logging/log.h>
 #include "ble.h"
+#include "ble_pet_collar_service.h"
 
 LOG_MODULE_REGISTER(ble, LOG_LEVEL_INF);
 
 static struct bt_conn *current_conn;
 
+/* Advertising packet (31 B max): Flags (3 B) + 128-bit service UUID (18 B).
+ * The service UUID lets iOS filter/scan by service (required for background
+ * scanning) and gives both platforms a stable identifier independent of name.
+ */
 static const struct bt_data ad[] = {
     BT_DATA_BYTES(BT_DATA_FLAGS, (BT_LE_AD_GENERAL | BT_LE_AD_NO_BREDR)),
+    BT_DATA_BYTES(BT_DATA_UUID128_ALL, PCS_UUID_SERVICE_VAL),
+};
+
+/* Scan response: complete name. Moved here because the 128-bit UUID + flags
+ * + name together exceed the 31-byte advertising payload limit.
+ */
+static const struct bt_data sd[] = {
     BT_DATA(BT_DATA_NAME_COMPLETE, CONFIG_BT_DEVICE_NAME,
             sizeof(CONFIG_BT_DEVICE_NAME) - 1),
 };
@@ -94,7 +106,8 @@ int ble_init(void)
 
 void ble_start_advertising(void)
 {
-    int err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), NULL, 0);
+    int err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad),
+                              sd, ARRAY_SIZE(sd));
     if (err && err != -EALREADY) {
         LOG_ERR("Advertising start failed: %d", err);
     } else {
