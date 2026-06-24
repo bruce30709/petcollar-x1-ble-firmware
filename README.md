@@ -2,7 +2,21 @@
 
 智慧寵物項圈的 BLE GATT 韌體 PoC，基於 **Fanstel EVM-BT40 (Nordic nRF5340)** + **Zephyr RTOS (nRF Connect SDK)**。
 
-裝置以 `PetCollar-X1` 廣播，App 透過 BLE GATT 直連，提供定位、生理、行為、狀態等資料，並接收 App 下達的指令與設定。本階段所有感測器資料皆為 **stub（固定假值）**，用於驗證完整 BLE 連線與 GATT 互動流程。
+裝置以 `PetCollar-X1` 廣播，App 透過 BLE GATT 直連，提供位置、生理、行為、狀態等資料，並接收 App 下達的指令與設定。本階段所有感測器資料皆為 **stub（固定假值）**，用於驗證完整 BLE 連線與 GATT 互動流程。
+
+> **產品定位**：本產品的核心價值在於**後端資料運算**——把加速度、心率、體溫等原始訊號，透過 Edge ML 與健康趨勢分析，轉化為「活動量、行為分類、異常預警」等洞察。感測器本身是商品化元件，可運算的健康行為智慧才是差異化所在。
+
+---
+
+## 定位架構（重要設計決策）
+
+本產品為 **BLE 直連手機**架構，**項圈端不配置 GNSS/GPS**。理由：
+
+- BLE 有效距離僅約 10–100m。當手機收得到項圈訊號時，狗已在使用者方圓數十公尺內，**用手機自身的 GPS 標記「最後出現位置」即可**，項圈自帶 GPS 為多餘成本。
+- 找尋方向改用 **RSSI 訊號強弱**做「熱／冷」尋找模式（近似 AirTag / Tile）。
+- 若狗離開 BLE 範圍，項圈即使有 GPS 也**無法回傳座標**（BLE 無網路回程）。真正的走失遠端定位需蜂巢數據（如 nRF9151）或群眾外包網路，屬量產級產品範疇，不在本 PoC 板（nRF5340）能力內。
+
+因此 Location 特徵的語意是「**手機端記錄的最後出現位置**」，而非項圈自帶 GNSS 定位。
 
 ---
 
@@ -17,7 +31,9 @@
 - Configuration 可讀寫，連線期間保存於 RAM
 - 內建 Device Information Service (DIS) 與 Battery Service (BAS)
 
-**尚未實作**（後續子專案）：真實感測器驅動（MAX30102 / LIS3DH / TMP117）、GNSS、NVS 持久化、BLE DFU、電源管理、Edge ML 行為分類、地理圍欄。
+**尚未實作**（後續子專案）：真實感測器驅動（MAX30102 / LIS3DH / TMP117）、Edge ML 行為分類與健康趨勢分析（產品核心價值）、RSSI 尋找模式、NVS 持久化、BLE DFU、電源管理、地理圍欄。
+
+> 定位不採用項圈端 GNSS（見上節「定位架構」）。
 
 ---
 
@@ -65,7 +81,7 @@ Base UUID：`A1B2C3D4-xxxx-1000-8000-00805F9B34FB`，`xxxx` 依特徵變化。
 
 | 特徵 | UUID `xxxx` | 屬性 | 長度 | Stub 內容 |
 |------|------------|------|------|-----------|
-| Location | `0101` | Notify | 18 B | 台北 25.033°N 121.5654°E，3D fix |
+| Location | `0101` | Notify | 18 B | 最後出現位置（手機 GPS 標記，非項圈 GNSS）；stub 台北 25.033°N 121.5654°E |
 | Health | `0102` | Notify | 8 B | HR 72 BPM、SpO₂ 98%、體溫 38.5°C |
 | Behavior | `0103` | Notify | 6 B | WALKING，信心 80，步數 1234 |
 | Command | `0104` | Write Without Response | 4 B | 寫入後記錄於 log |
