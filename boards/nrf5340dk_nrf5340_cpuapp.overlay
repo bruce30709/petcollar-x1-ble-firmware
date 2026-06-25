@@ -3,3 +3,62 @@
 		zephyr,console = &uart0;
 	};
 };
+
+/* ─── I²C1 (TWIM1)：LIS3DH 加速度計 (SDA=P1.02/D14, SCL=P1.03/D15) ─── */
+/* pinctrl-0/1 在 nrf5340_cpuapp_common-pinctrl.dtsi 已設好，直接 enable */
+&i2c1 {
+	status = "okay";
+
+	lis3dh: lis3dh@18 {
+		compatible = "st,lis2dh";
+		reg = <0x18>;
+		status = "okay";
+	};
+};
+
+/* ─── UART2 (UARTE2)：DS18B20 1-Wire 溫度計 (Data=P1.04/D2) ─────── */
+/* TWIM1 和 UARTE1 共用 peripheral instance 1，故改用 UARTE2 (instance 2) */
+/* TX+RX 都接 P1.04，形成半雙工單線 1-Wire；TX 設 open-drain (H0D1)       */
+&pinctrl {
+	uart2_default: uart2_default {
+		group1 {
+			/* RX on P1.04: 讀取 DS18B20 回應 */
+			psels = <NRF_PSEL(UART_RX, 1, 4)>;
+			bias-pull-up;
+		};
+		group2 {
+			/* TX on P1.04: 傳送 1-Wire 時序，open-drain（H0D1）*/
+			psels = <NRF_PSEL(UART_TX, 1, 4)>;
+			nordic,drive-mode = <NRF_DRIVE_H0D1>;
+		};
+	};
+	uart2_sleep: uart2_sleep {
+		group1 {
+			psels = <NRF_PSEL(UART_RX, 1, 4)>,
+				<NRF_PSEL(UART_TX, 1, 4)>;
+			low-power-enable;
+		};
+	};
+};
+
+&uart2 {
+	status = "okay";
+	pinctrl-0 = <&uart2_default>;
+	pinctrl-1 = <&uart2_sleep>;
+	pinctrl-names = "default", "sleep";
+	current-speed = <115200>;
+
+	w1_0: w1-zephyr-serial-0 {
+		compatible = "zephyr,w1-serial";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+
+		ds18b20: ds18b20_0 {
+			compatible = "maxim,ds18b20";
+			family-code = <0x28>;
+			resolution = <12>;
+			status = "okay";
+		};
+	};
+};

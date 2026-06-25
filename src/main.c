@@ -2,119 +2,120 @@
 #include <zephyr/logging/log.h>
 #include "ble.h"
 #include "ble_pet_collar_service.h"
+#include "sensors.h"
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
-/* ---- Stub data (compile-time constants) ---- */
-
-/* Taipei: 25.0330°N, 121.5654°E */
+/* Stub location — Taipei (no GNSS on collar, filled by phone app) */
 static const struct ble_location_t stub_location = {
-    .lat_e7      = 250330000,
-    .lon_e7      = 1215654000,
-    .alt_m       = 10,
-    .accuracy_cm = 150,
-    .timestamp   = 1719187200,  /* 2024-06-24 00:00:00 UTC */
-    .fix_type    = 2,           /* 3D fix */
-    .mode        = 1,           /* normal */
+	.lat_e7      = 250330000,
+	.lon_e7      = 1215654000,
+	.alt_m       = 10,
+	.accuracy_cm = 150,
+	.timestamp   = 1719187200,
+	.fix_type    = 2,
+	.mode        = 1,
 };
 
-/* HR=72 BPM, SpO2=98%, Temp=38.5°C, all valid */
-static const struct ble_health_t stub_health = {
-    .heart_rate     = 720,   /* 72.0 BPM × 10 */
-    .spo2           = 98,
-    .temperature    = 385,   /* 38.5°C × 10 */
-    .signal_quality = 85,
-    .flags          = 0x07,  /* bit0|bit1|bit2 = HR+SpO2+Temp valid */
-};
-
-static const struct ble_behavior_t stub_behavior = {
-    .behavior   = BEHAVIOR_WALKING,
-    .confidence = 80,
-    .steps      = 1234,
-};
-
-static const struct ble_status_t stub_status = {
-    .state       = STATE_ADVERTISING,
-    .battery_pct = 85,
-    .rssi        = 0,
-    .uptime      = {0, 0, 0},
-};
-
-/* ---- Delayed work items ---- */
-
+/* Delayed work items */
 static struct k_work_delayable health_work;
 static struct k_work_delayable location_work;
 static struct k_work_delayable status_work;
 static struct k_work_delayable behavior_work;
 
+/* Track runtime for status uptime field */
+static uint32_t boot_tick;
+
 static void health_work_fn(struct k_work *work)
 {
-    int err = ble_pcs_notify_health(&stub_health);
-    if (err && err != -ENOTCONN) {
-        LOG_WRN("health notify err: %d", err);
-    }
-    k_work_reschedule(&health_work, K_SECONDS(60));
+	struct ble_health_t health = {0};
+	/* blocks ~750 ms for DS18B20 12-bit conversion — acceptable at 30s interval */
+	sensors_get_health(&health);
+
+	int err = ble_pcs_notify_health(&health);
+	if (err && err != -ENOTCONN) {
+		LOG_WRN("health notify err: %d", err);
+	}
+	k_work_reschedule(&health_work, K_SECONDS(30));
 }
 
 static void location_work_fn(struct k_work *work)
 {
-    int err = ble_pcs_notify_location(&stub_location);
-    if (err && err != -ENOTCONN) {
-        LOG_WRN("location notify err: %d", err);
-    }
-    k_work_reschedule(&location_work, K_SECONDS(30));
+	int err = ble_pcs_notify_location(&stub_location);
+	if (err && err != -ENOTCONN) {
+		LOG_WRN("location notify err: %d", err);
+	}
+	k_work_reschedule(&location_work, K_SECONDS(30));
 }
 
 static void status_work_fn(struct k_work *work)
 {
-    int err = ble_pcs_notify_status(&stub_status);
-    if (err && err != -ENOTCONN) {
-        LOG_WRN("status notify err: %d", err);
-    }
-    k_work_reschedule(&status_work, K_SECONDS(5));
+	uint32_t uptime_s = (k_uptime_get_32() - boot_tick) / 1000;
+	struct ble_status_t status = {
+		.state       = STATE_CONNECTED,
+		.battery_pct = 85,  /* stub — no fuel gauge in PoC */
+		.rssi        = 0,
+		.uptime      = {
+			(uint8_t)(uptime_s & 0xFF),
+			(uint8_t)((uptime_s >> 8) & 0xFF),
+			(uint8_t)((uptime_s >> 16) & 0xFF),
+		},
+	};
+
+	int err = ble_pcs_notify_status(&status);
+	if (err && err != -ENOTCONN) {
+		LOG_WRN("status notify err: %d", err);
+	}
+	k_work_reschedule(&status_work, K_SECONDS(5));
 }
 
 static void behavior_work_fn(struct k_work *work)
 {
-    int err = ble_pcs_notify_behavior(&stub_behavior);
-    if (err && err != -ENOTCONN) {
-        LOG_WRN("behavior notify err: %d", err);
-    }
-    k_work_reschedule(&behavior_work, K_SECONDS(120));
-}
+	struct ble_behavior_t behavior = {0};
+	sensors_get_behavior(&behavior);
 
-/* ---- Boot sequence ---- */
+	int err = ble_pcs_notify_behavior(&behavior);
+	if (err && err != -ENOTCONN) {
+		LOG_WRN("behavior notify err: %d", err);
+	}
+	k_work_reschedule(&behavior_work, K_SECONDS(5));
+}
 
 int main(void)
 {
-    LOG_INF("PetCollar-X1 booting...");
+	LOG_INF("PetCollar-X1 booting...");
+	boot_tick = k_uptime_get_32();
 
-    int err = ble_init();
-    if (err) {
-        LOG_ERR("ble_init failed: %d", err);
-        /* Zephyr ignores main() return value — device requires reset to recover */
-        return err;
-    }
+	int err = ble_init();
+	if (err) {
+		LOG_ERR("ble_init failed: %d", err);
+		return err;
+	}
 
-    err = ble_pcs_init();
-    if (err) {
-        LOG_ERR("ble_pcs_init failed: %d", err);
-        /* Zephyr ignores main() return value — device requires reset to recover */
-        return err;
-    }
+	err = ble_pcs_init();
+	if (err) {
+		LOG_ERR("ble_pcs_init failed: %d", err);
+		return err;
+	}
 
-    ble_start_advertising();
+	/* Sensor init — non-fatal: BLE still works even if sensors fail */
+	err = sensors_init();
+	if (err) {
+		LOG_WRN("sensors_init: %d (BLE running, sensor data unavailable)", err);
+	}
 
-    k_work_init_delayable(&health_work,   health_work_fn);
-    k_work_init_delayable(&location_work, location_work_fn);
-    k_work_init_delayable(&status_work,   status_work_fn);
-    k_work_init_delayable(&behavior_work, behavior_work_fn);
+	ble_start_advertising();
 
-    k_work_reschedule(&health_work,   K_SECONDS(5));
-    k_work_reschedule(&location_work, K_SECONDS(5));
-    k_work_reschedule(&status_work,   K_SECONDS(5));
-    k_work_reschedule(&behavior_work, K_SECONDS(5));
+	k_work_init_delayable(&health_work,   health_work_fn);
+	k_work_init_delayable(&location_work, location_work_fn);
+	k_work_init_delayable(&status_work,   status_work_fn);
+	k_work_init_delayable(&behavior_work, behavior_work_fn);
 
-    LOG_INF("PetCollar-X1 ready");
-    return 0;
+	k_work_reschedule(&health_work,   K_SECONDS(5));
+	k_work_reschedule(&location_work, K_SECONDS(5));
+	k_work_reschedule(&status_work,   K_SECONDS(5));
+	k_work_reschedule(&behavior_work, K_SECONDS(5));
+
+	LOG_INF("PetCollar-X1 ready");
+	return 0;
 }
