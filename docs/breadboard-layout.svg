@@ -80,6 +80,7 @@
 <circle cx="256" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="536" r="5" fill="#fab387"/><circle cx="328" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
 <circle cx="256" cy="558" r="5" fill="#f9e2af"/><circle cx="280" cy="558" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="558" r="5" fill="#fab387"/><circle cx="328" cy="558" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="558" r="5" fill="#f9e2af"/>
 <circle cx="256" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<g opacity="0.25"><circle cx="552" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="576" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="600" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="624" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="648" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="552" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="576" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="600" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="624" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1"/><circle cx="648" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1"/></g>
 <text x="612" y="310" fill="#45475a" font-size="12" text-anchor="middle" transform="rotate(-90,612,310)">未使用 (f–j)</text>
 <rect x="352" y="153" width="170" height="132" rx="6" fill="#2e1f47" stroke="#cba6f7" stroke-width="2"/>
 <text x="437" y="173" fill="#cba6f7" font-size="12" font-weight="bold" text-anchor="middle">ADXL345</text>
@@ -109,50 +110,50 @@
 <text x="730" y="518" fill="#a6adc8" font-size="10" text-anchor="end">黑線</text>
 <circle cx="735" cy="558" r="5" fill="#f9e2af"/>
 <text x="730" y="562" fill="#f9e2af" font-size="10" text-anchor="end">黃線</text>
-<line x1="260" y1="162" x2="348" y2="162" stroke="#f38ba8" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="184" x2="348" y2="184" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="206" x2="348" y2="206" stroke="#a6e3a1" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="228" x2="348" y2="228" stroke="#89dceb" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="250" x2="348" y2="250" stroke="#fab387" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="272" x2="348" y2="272" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="338" x2="348" y2="338" stroke="#f38ba8" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="360" x2="348" y2="360" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="382" x2="348" y2="382" stroke="#a6e3a1" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="404" x2="348" y2="404" stroke="#89dceb" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="492" x2="348" y2="492" stroke="#f38ba8" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="514" x2="348" y2="514" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<line x1="260" y1="558" x2="348" y2="558" stroke="#f9e2af" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-<path d="M 280 382 Q 270 294 280 206" stroke="#a6e3a1" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+<line x1="260" y1="162" x2="348" y2="162" stroke="#f38ba8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="184" x2="348" y2="184" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="206" x2="348" y2="206" stroke="#a6e3a1" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="228" x2="348" y2="228" stroke="#89dceb" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="250" x2="348" y2="250" stroke="#fab387" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="272" x2="348" y2="272" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="338" x2="348" y2="338" stroke="#f38ba8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="360" x2="348" y2="360" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="382" x2="348" y2="382" stroke="#a6e3a1" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="404" x2="348" y2="404" stroke="#89dceb" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="492" x2="348" y2="492" stroke="#f38ba8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="514" x2="348" y2="514" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<line x1="260" y1="558" x2="348" y2="558" stroke="#f9e2af" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<path d="M 280 382 Q 270 294 280 206" stroke="#a6e3a1" stroke-width="1.2" fill="none" stroke-dasharray="5,3"/>
 <text x="266" y="300" fill="#a6e3a1" font-size="8" text-anchor="end">SDA</text>
 <text x="266" y="309" fill="#a6e3a1" font-size="8" text-anchor="end">跳線</text>
-<path d="M 280 404 Q 268 316 280 228" stroke="#89dceb" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+<path d="M 280 404 Q 268 316 280 228" stroke="#89dceb" stroke-width="1.2" fill="none" stroke-dasharray="5,3"/>
 <text x="264" y="320" fill="#89dceb" font-size="8" text-anchor="end">SCL</text>
 <text x="264" y="329" fill="#89dceb" font-size="8" text-anchor="end">跳線</text>
-<line x1="144" y1="63" x2="178" y2="63" stroke="#f38ba8" stroke-width="3" stroke-linecap="round"/>
-<line x1="144" y1="76" x2="178" y2="76" stroke="#6c7086" stroke-width="3" stroke-linecap="round"/>
-<line x1="256" y1="64" x2="256" y2="162" stroke="#f38ba8" stroke-width="2.5" stroke-linecap="round"/>
-<line x1="261" y1="76" x2="261" y2="184" stroke="#6c7086" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M 256 206 L 180 206 L 144 296" stroke="#a6e3a1" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 256 228 L 178 228 L 144 334" stroke="#89dceb" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<line x1="258" y1="64" x2="258" y2="250" stroke="#fab387" stroke-width="2" stroke-dasharray="5,3"/>
-<line x1="263" y1="76" x2="263" y2="272" stroke="#6c7086" stroke-width="2" stroke-dasharray="5,3"/>
-<line x1="264" y1="64" x2="264" y2="338" stroke="#f38ba8" stroke-width="2.5" stroke-linecap="round"/>
-<line x1="268" y1="76" x2="268" y2="360" stroke="#6c7086" stroke-width="2.5" stroke-linecap="round"/>
-<line x1="272" y1="64" x2="272" y2="492" stroke="#f38ba8" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M 735 492 L 356 492" stroke="#f38ba8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-<path d="M 735 514 L 356 514" stroke="#6c7086" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-<line x1="276" y1="76" x2="276" y2="514" stroke="#6c7086" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M 304 536 L 304 520 L 280 520 L 280 64" stroke="#fab387" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 256 558 L 178 558 L 144 559" stroke="#f9e2af" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 735 558 L 356 558" stroke="#f9e2af" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<line x1="144" y1="63" x2="178" y2="63" stroke="#f38ba8" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="144" y1="76" x2="178" y2="76" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="256" y1="64" x2="256" y2="162" stroke="#f38ba8" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="261" y1="76" x2="261" y2="184" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M 256 206 L 180 206 L 144 296" stroke="#a6e3a1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 256 228 L 178 228 L 144 334" stroke="#89dceb" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="258" y1="64" x2="258" y2="250" stroke="#fab387" stroke-width="1.5" stroke-dasharray="5,3"/>
+<line x1="263" y1="76" x2="263" y2="272" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="5,3"/>
+<line x1="264" y1="64" x2="264" y2="338" stroke="#f38ba8" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="268" y1="76" x2="268" y2="360" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="272" y1="64" x2="272" y2="492" stroke="#f38ba8" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M 735 492 L 356 492" stroke="#f38ba8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<path d="M 735 514 L 356 514" stroke="#6c7086" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<line x1="276" y1="76" x2="276" y2="514" stroke="#6c7086" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M 304 536 L 304 520 L 280 520 L 280 64" stroke="#fab387" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 256 558 L 178 558 L 144 559" stroke="#f9e2af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 735 558 L 356 558" stroke="#f9e2af" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <rect x="680" y="160" width="210" height="300" rx="6" fill="#181825" stroke="#45475a" stroke-width="1" opacity="0.9"/>
 <text x="785" y="178" fill="#cdd6f4" font-size="11" font-weight="bold" text-anchor="middle">說明</text>
-<line x1="690" y1="192" x2="710" y2="192" stroke="#f38ba8" stroke-width="2.5"/><text x="715" y="196" fill="#a6adc8" font-size="10">3.3V</text>
-<line x1="690" y1="208" x2="710" y2="208" stroke="#6c7086" stroke-width="2.5"/><text x="715" y="212" fill="#a6adc8" font-size="10">GND</text>
-<line x1="690" y1="224" x2="710" y2="224" stroke="#a6e3a1" stroke-width="2.5"/><text x="715" y="228" fill="#a6adc8" font-size="10">SDA (I²C 共用)</text>
-<line x1="690" y1="240" x2="710" y2="240" stroke="#89dceb" stroke-width="2.5"/><text x="715" y="244" fill="#a6adc8" font-size="10">SCL (I²C 共用)</text>
-<line x1="690" y1="256" x2="710" y2="256" stroke="#f9e2af" stroke-width="2.5"/><text x="715" y="260" fill="#a6adc8" font-size="10">1-Wire / DQ</text>
-<line x1="690" y1="272" x2="710" y2="272" stroke="#fab387" stroke-width="2" stroke-dasharray="5,3"/><text x="715" y="276" fill="#a6adc8" font-size="10">CS/SDO 必接</text>
+<line x1="690" y1="192" x2="710" y2="192" stroke="#f38ba8" stroke-width="1.5"/><text x="715" y="196" fill="#a6adc8" font-size="10">3.3V</text>
+<line x1="690" y1="208" x2="710" y2="208" stroke="#6c7086" stroke-width="1.5"/><text x="715" y="212" fill="#a6adc8" font-size="10">GND</text>
+<line x1="690" y1="224" x2="710" y2="224" stroke="#a6e3a1" stroke-width="1.5"/><text x="715" y="228" fill="#a6adc8" font-size="10">SDA (I²C 共用)</text>
+<line x1="690" y1="240" x2="710" y2="240" stroke="#89dceb" stroke-width="1.5"/><text x="715" y="244" fill="#a6adc8" font-size="10">SCL (I²C 共用)</text>
+<line x1="690" y1="256" x2="710" y2="256" stroke="#f9e2af" stroke-width="1.5"/><text x="715" y="260" fill="#a6adc8" font-size="10">1-Wire / DQ</text>
+<line x1="690" y1="272" x2="710" y2="272" stroke="#fab387" stroke-width="1.5" stroke-dasharray="5,3"/><text x="715" y="276" fill="#a6adc8" font-size="10">CS/SDO 必接</text>
 <text x="690" y="296" fill="#6c7086" font-size="9">● 同色橫条 = 同排(a-e)互通</text>
 <text x="690" y="310" fill="#6c7086" font-size="9">● 虛線 = 深包板跳線</text>
 <text x="690" y="324" fill="#a6e3a1" font-size="9">● SDA/SCL 跳線讓兩顏感測器</text>
