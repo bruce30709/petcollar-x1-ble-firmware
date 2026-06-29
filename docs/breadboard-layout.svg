@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="660" viewBox="0 0 1060 660" font-family="monospace, sans-serif">
+<rect width="1060" height="660" fill="#1e1e2e" rx="12"/>
+<text x="530" y="28" fill="#cdd6f4" font-size="15" font-weight="bold" text-anchor="middle">PetCollar-X1 麵包板俧視接線圖</text>
+<rect x="10" y="44" width="128" height="600" rx="8" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+<text x="74" y="66" fill="#89b4fa" font-size="12" font-weight="bold" text-anchor="middle">EVM-BT40</text>
+<text x="74" y="80" fill="#6c7086" font-size="9" text-anchor="middle">nRF5340</text>
+<rect x="128" y="57" width="16" height="12" rx="2" fill="#f38ba8"/>
+<text x="122" y="67" fill="#f38ba8" font-size="10" text-anchor="end">3.3V</text>
+<rect x="128" y="70" width="16" height="12" rx="2" fill="#585b70"/>
+<text x="122" y="80" fill="#a6adc8" font-size="10" text-anchor="end">GND</text>
+<rect x="128" y="290" width="16" height="12" rx="2" fill="#a6e3a1"/>
+<text x="122" y="298" fill="#a6e3a1" font-size="10" text-anchor="end">D14</text>
+<text x="122" y="308" fill="#6c7086" font-size="8" text-anchor="end">SDA</text>
+<rect x="128" y="328" width="16" height="12" rx="2" fill="#89dceb"/>
+<text x="122" y="336" fill="#89dceb" font-size="10" text-anchor="end">D15</text>
+<text x="122" y="346" fill="#6c7086" font-size="8" text-anchor="end">SCL</text>
+<rect x="128" y="553" width="16" height="12" rx="2" fill="#f9e2af"/>
+<text x="122" y="561" fill="#f9e2af" font-size="10" text-anchor="end">D2</text>
+<text x="122" y="571" fill="#6c7086" font-size="8" text-anchor="end">1-Wire</text>
+<rect x="162" y="44" width="740" height="600" rx="8" fill="#2d2e42" stroke="#585b70" stroke-width="1.5"/>
+<rect x="536" y="100" width="8" height="526" fill="#1e1e2e" rx="2"/>
+<rect x="178" y="56" width="706" height="15" rx="3" fill="#f38ba8" opacity="0.9"/>
+<text x="174" y="67" fill="#f38ba8" font-size="11" font-weight="bold" text-anchor="end">+</text>
+<text x="892" y="67" fill="#f38ba8" font-size="9">3.3V</text>
+<rect x="178" y="75" width="706" height="15" rx="3" fill="#4a4b60" opacity="0.9"/>
+<text x="174" y="86" fill="#a6adc8" font-size="11" font-weight="bold" text-anchor="end">-</text>
+<text x="892" y="86" fill="#a6adc8" font-size="9">GND</text>
+<text x="256" y="104" fill="#89b4fa" font-size="11" font-weight="bold" text-anchor="middle">a</text>
+<text x="280" y="104" fill="#89b4fa" font-size="11" font-weight="bold" text-anchor="middle">b</text>
+<text x="304" y="104" fill="#89b4fa" font-size="11" font-weight="bold" text-anchor="middle">c</text>
+<text x="328" y="104" fill="#89b4fa" font-size="11" font-weight="bold" text-anchor="middle">d</text>
+<text x="352" y="104" fill="#89b4fa" font-size="11" font-weight="bold" text-anchor="middle">e</text>
+<text x="552" y="104" fill="#45475a" font-size="11" text-anchor="middle">f</text>
+<text x="576" y="104" fill="#45475a" font-size="11" text-anchor="middle">g</text>
+<text x="600" y="104" fill="#45475a" font-size="11" text-anchor="middle">h</text>
+<text x="624" y="104" fill="#45475a" font-size="11" text-anchor="middle">i</text>
+<text x="648" y="104" fill="#45475a" font-size="11" text-anchor="middle">j</text>
+<text x="240" y="122" fill="#6c7086" font-size="9" text-anchor="middle">1</text>
+<text x="240" y="144" fill="#6c7086" font-size="9" text-anchor="middle">2</text>
+<text x="240" y="166" fill="#6c7086" font-size="9" text-anchor="middle">3</text>
+<text x="240" y="188" fill="#6c7086" font-size="9" text-anchor="middle">4</text>
+<text x="240" y="210" fill="#6c7086" font-size="9" text-anchor="middle">5</text>
+<text x="240" y="232" fill="#6c7086" font-size="9" text-anchor="middle">6</text>
+<text x="240" y="254" fill="#6c7086" font-size="9" text-anchor="middle">7</text>
+<text x="240" y="276" fill="#6c7086" font-size="9" text-anchor="middle">8</text>
+<text x="240" y="298" fill="#6c7086" font-size="9" text-anchor="middle">9</text>
+<text x="238" y="320" fill="#6c7086" font-size="9" text-anchor="middle">10</text>
+<text x="238" y="342" fill="#6c7086" font-size="9" text-anchor="middle">11</text>
+<text x="238" y="364" fill="#6c7086" font-size="9" text-anchor="middle">12</text>
+<text x="238" y="386" fill="#6c7086" font-size="9" text-anchor="middle">13</text>
+<text x="238" y="408" fill="#6c7086" font-size="9" text-anchor="middle">14</text>
+<text x="238" y="430" fill="#6c7086" font-size="9" text-anchor="middle">15</text>
+<text x="238" y="452" fill="#6c7086" font-size="9" text-anchor="middle">16</text>
+<text x="238" y="474" fill="#6c7086" font-size="9" text-anchor="middle">17</text>
+<text x="238" y="496" fill="#6c7086" font-size="9" text-anchor="middle">18</text>
+<text x="238" y="518" fill="#6c7086" font-size="9" text-anchor="middle">19</text>
+<text x="238" y="540" fill="#6c7086" font-size="9" text-anchor="middle">20</text>
+<text x="238" y="562" fill="#6c7086" font-size="9" text-anchor="middle">21</text>
+<text x="238" y="584" fill="#6c7086" font-size="9" text-anchor="middle">22</text>
+<circle cx="256" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="118" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="140" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="162" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="162" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="162" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="162" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="162" r="5" fill="#f38ba8"/>
+<circle cx="256" cy="184" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="184" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="184" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="184" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="184" r="5" fill="#6c7086"/>
+<circle cx="256" cy="206" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="206" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="206" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="206" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="206" r="5" fill="#a6e3a1"/>
+<circle cx="256" cy="228" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="228" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="228" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="228" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="228" r="5" fill="#89dceb"/>
+<circle cx="256" cy="250" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="250" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="250" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="250" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="250" r="5" fill="#fab387"/>
+<circle cx="256" cy="272" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="272" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="272" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="272" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="272" r="5" fill="#6c7086"/>
+<circle cx="256" cy="294" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="294" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="294" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="294" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="294" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="316" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="316" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="316" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="316" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="316" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="338" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="338" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="338" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="338" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="338" r="5" fill="#f38ba8"/>
+<circle cx="256" cy="360" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="360" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="360" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="360" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="360" r="5" fill="#6c7086"/>
+<circle cx="256" cy="382" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="382" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="382" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="382" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="382" r="5" fill="#a6e3a1"/>
+<circle cx="256" cy="404" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="404" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="404" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="404" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="404" r="5" fill="#89dceb"/>
+<circle cx="256" cy="426" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="426" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="426" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="426" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="426" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="448" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="448" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="448" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="448" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="448" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="470" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="470" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="470" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="470" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="470" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="492" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="492" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="492" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="492" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="492" r="5" fill="#f38ba8"/>
+<circle cx="256" cy="514" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="514" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="514" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="514" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="514" r="5" fill="#6c7086"/>
+<circle cx="256" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="536" r="5" fill="#fab387"/><circle cx="328" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="536" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<circle cx="256" cy="558" r="5" fill="#f9e2af"/><circle cx="280" cy="558" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="558" r="5" fill="#fab387"/><circle cx="328" cy="558" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="558" r="5" fill="#f9e2af"/>
+<circle cx="256" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="280" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="304" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="328" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/><circle cx="352" cy="580" r="4" fill="none" stroke="#45475a" stroke-width="1.2"/>
+<text x="612" y="310" fill="#45475a" font-size="12" text-anchor="middle" transform="rotate(-90,612,310)">未使用 (f–j)</text>
+<rect x="352" y="153" width="170" height="132" rx="6" fill="#2e1f47" stroke="#cba6f7" stroke-width="2"/>
+<text x="437" y="173" fill="#cba6f7" font-size="12" font-weight="bold" text-anchor="middle">ADXL345</text>
+<text x="437" y="186" fill="#6c7086" font-size="9" text-anchor="middle">Breakout (I²C  0x53)</text>
+<text x="360" y="166" fill="#f38ba8" font-size="10">VCC</text>
+<text x="360" y="188" fill="#a6adc8" font-size="10">GND</text>
+<text x="360" y="210" fill="#a6e3a1" font-size="10">SDA</text>
+<text x="360" y="232" fill="#89dceb" font-size="10">SCL</text>
+<text x="360" y="254" fill="#fab387" font-size="10">CS ⚠</text>
+<text x="360" y="276" fill="#a6adc8" font-size="10">SDO</text>
+<rect x="352" y="328" width="170" height="88" rx="6" fill="#2e1530" stroke="#f5c2e7" stroke-width="2"/>
+<text x="437" y="350" fill="#f5c2e7" font-size="12" font-weight="bold" text-anchor="middle">MAX30100</text>
+<text x="437" y="363" fill="#6c7086" font-size="9" text-anchor="middle">Breakout (I²C  0x57)</text>
+<text x="360" y="342" fill="#f38ba8" font-size="10">VIN</text>
+<text x="360" y="364" fill="#a6adc8" font-size="10">GND</text>
+<text x="360" y="386" fill="#a6e3a1" font-size="10">SDA</text>
+<text x="360" y="408" fill="#89dceb" font-size="10">SCL</text>
+<rect x="294" y="528" width="20" height="38" rx="4" fill="#3d2e10" stroke="#fab387" stroke-width="2"/>
+<text x="325" y="544" fill="#fab387" font-size="9">4.7kΩ</text>
+<text x="325" y="555" fill="#6c7086" font-size="8">上拉</text>
+<rect x="735" y="476" width="120" height="100" rx="8" fill="#2e2b10" stroke="#f9e2af" stroke-width="1.5"/>
+<text x="795" y="496" fill="#f9e2af" font-size="11" font-weight="bold" text-anchor="middle">DS18B20</text>
+<text x="795" y="509" fill="#6c7086" font-size="9" text-anchor="middle">防水探針</text>
+<circle cx="735" cy="492" r="5" fill="#f38ba8"/>
+<text x="730" y="496" fill="#f38ba8" font-size="10" text-anchor="end">紅線</text>
+<circle cx="735" cy="514" r="5" fill="#3a3a3a" stroke="#a6adc8" stroke-width="1"/>
+<text x="730" y="518" fill="#a6adc8" font-size="10" text-anchor="end">黑線</text>
+<circle cx="735" cy="558" r="5" fill="#f9e2af"/>
+<text x="730" y="562" fill="#f9e2af" font-size="10" text-anchor="end">黃線</text>
+<line x1="260" y1="162" x2="348" y2="162" stroke="#f38ba8" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="184" x2="348" y2="184" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="206" x2="348" y2="206" stroke="#a6e3a1" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="228" x2="348" y2="228" stroke="#89dceb" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="250" x2="348" y2="250" stroke="#fab387" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="272" x2="348" y2="272" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="338" x2="348" y2="338" stroke="#f38ba8" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="360" x2="348" y2="360" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="382" x2="348" y2="382" stroke="#a6e3a1" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="404" x2="348" y2="404" stroke="#89dceb" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="492" x2="348" y2="492" stroke="#f38ba8" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="514" x2="348" y2="514" stroke="#6c7086" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<line x1="260" y1="558" x2="348" y2="558" stroke="#f9e2af" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+<path d="M 280 382 Q 270 294 280 206" stroke="#a6e3a1" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+<text x="266" y="300" fill="#a6e3a1" font-size="8" text-anchor="end">SDA</text>
+<text x="266" y="309" fill="#a6e3a1" font-size="8" text-anchor="end">跳線</text>
+<path d="M 280 404 Q 268 316 280 228" stroke="#89dceb" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+<text x="264" y="320" fill="#89dceb" font-size="8" text-anchor="end">SCL</text>
+<text x="264" y="329" fill="#89dceb" font-size="8" text-anchor="end">跳線</text>
+<line x1="144" y1="63" x2="178" y2="63" stroke="#f38ba8" stroke-width="3" stroke-linecap="round"/>
+<line x1="144" y1="76" x2="178" y2="76" stroke="#6c7086" stroke-width="3" stroke-linecap="round"/>
+<line x1="256" y1="64" x2="256" y2="162" stroke="#f38ba8" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="261" y1="76" x2="261" y2="184" stroke="#6c7086" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 256 206 L 180 206 L 144 296" stroke="#a6e3a1" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 256 228 L 178 228 L 144 334" stroke="#89dceb" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="258" y1="64" x2="258" y2="250" stroke="#fab387" stroke-width="2" stroke-dasharray="5,3"/>
+<line x1="263" y1="76" x2="263" y2="272" stroke="#6c7086" stroke-width="2" stroke-dasharray="5,3"/>
+<line x1="264" y1="64" x2="264" y2="338" stroke="#f38ba8" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="268" y1="76" x2="268" y2="360" stroke="#6c7086" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="272" y1="64" x2="272" y2="492" stroke="#f38ba8" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 735 492 L 356 492" stroke="#f38ba8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M 735 514 L 356 514" stroke="#6c7086" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<line x1="276" y1="76" x2="276" y2="514" stroke="#6c7086" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 304 536 L 304 520 L 280 520 L 280 64" stroke="#fab387" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 256 558 L 178 558 L 144 559" stroke="#f9e2af" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 735 558 L 356 558" stroke="#f9e2af" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<rect x="680" y="160" width="210" height="300" rx="6" fill="#181825" stroke="#45475a" stroke-width="1" opacity="0.9"/>
+<text x="785" y="178" fill="#cdd6f4" font-size="11" font-weight="bold" text-anchor="middle">說明</text>
+<line x1="690" y1="192" x2="710" y2="192" stroke="#f38ba8" stroke-width="2.5"/><text x="715" y="196" fill="#a6adc8" font-size="10">3.3V</text>
+<line x1="690" y1="208" x2="710" y2="208" stroke="#6c7086" stroke-width="2.5"/><text x="715" y="212" fill="#a6adc8" font-size="10">GND</text>
+<line x1="690" y1="224" x2="710" y2="224" stroke="#a6e3a1" stroke-width="2.5"/><text x="715" y="228" fill="#a6adc8" font-size="10">SDA (I²C 共用)</text>
+<line x1="690" y1="240" x2="710" y2="240" stroke="#89dceb" stroke-width="2.5"/><text x="715" y="244" fill="#a6adc8" font-size="10">SCL (I²C 共用)</text>
+<line x1="690" y1="256" x2="710" y2="256" stroke="#f9e2af" stroke-width="2.5"/><text x="715" y="260" fill="#a6adc8" font-size="10">1-Wire / DQ</text>
+<line x1="690" y1="272" x2="710" y2="272" stroke="#fab387" stroke-width="2" stroke-dasharray="5,3"/><text x="715" y="276" fill="#a6adc8" font-size="10">CS/SDO 必接</text>
+<text x="690" y="296" fill="#6c7086" font-size="9">● 同色橫条 = 同排(a-e)互通</text>
+<text x="690" y="310" fill="#6c7086" font-size="9">● 虛線 = 深包板跳線</text>
+<text x="690" y="324" fill="#a6e3a1" font-size="9">● SDA/SCL 跳線讓兩顏感測器</text>
+<text x="690" y="336" fill="#a6e3a1" font-size="9">  共用同一條 I²C 線</text>
+<text x="690" y="352" fill="#fab387" font-size="9">● ADXL345 CS ⚠ 一定要接</text>
+<text x="690" y="364" fill="#fab387" font-size="9">  3.3V！否則 I²C 不通</text>
+<text x="690" y="380" fill="#a6adc8" font-size="9">● DS18B20 是探針：三條線</text>
+<text x="690" y="392" fill="#a6adc8" font-size="9">  直接插麵包板孔</text>
+<text x="690" y="408" fill="#fab387" font-size="9">● 4.7kΩ 立插於行20-21 col c</text>
+<text x="690" y="420" fill="#fab387" font-size="9">  上腳→3.3V，下腳→資料線</text>
+<text x="690" y="436" fill="#f9e2af" font-size="9">● 行21 a/c/e 同列互通=資料</text>
+<text x="690" y="448" fill="#f9e2af" font-size="9">  匯流點(D2+電阻+DS18B20)</text>
+</svg>
